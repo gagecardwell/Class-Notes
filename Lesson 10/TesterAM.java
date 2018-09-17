@@ -165,14 +165,44 @@ public class TesterAM
         switch( c )
         {
             case 'A':
-            case 'B':
             case 'a':
             {
                 System.out.println("This is a switch example with characters");
                 break;
             }
         
-        
+            case 'B':
+            case 'b':
+            {
+                System.out.println("oooooo!");
+                break;
+            }
+            
+            default:
+            {
+                System.out.println("That character was not found.");
+                break;
+            }
         }
+    }
+    
+    public static void charExamples()
+    {
+        char c = 'A'; // decimal value of 65
+        char goofy = 'b'; // decimal value of 98
+        
+        int num = c + goofy; // 65 + 98
+        
+        System.out.println(num); // 163
+        
+        char ch = (char)(c + 32); 
+        
+        System.out.println(ch); // a
+        
+        System.out.println( (char)(goofy - 32) ); // B
+        
+        System.out.println("The character is " + c ); // The character is A
+        
+        
     }
 }
