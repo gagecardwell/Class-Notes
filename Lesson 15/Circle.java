@@ -7,44 +7,43 @@
  */
 public class Circle
 {
-    // state variable, instance variable, or instance fields
+    // instance variables aka state variables aka instance fields
     private double radius;
-    
-    // Constructor method
-    public Circle( double r )
+
+    // constructor method
+    public Circle(double r)
     {
-        radius = r; // initialize any state variables
+        radius = r;
     }
     
-    // Note:  Constructor methods are always public
-    // You can have more than one constructor, as long as the parameters are different
-    
-    // default constructor (no arguments)
+    // we can have more than one constructor method
+    // default constructor (takes no arguments)
     public Circle()
     {
-        radius = 1;
+        radius = 1; //default radius is 1
     }
     
-    // Most methods we make are public, but we can have private methods occasionally
-    public double getArea()
+    // methods that calculate different things a circle would have:
+    public double area()
     {
-        return Math.PI * radius * radius;
+        return Math.PI*radius*radius;
     }
     
-    public double getCircumference()
+    public double circumference()
     {
-        return Math.PI * calculateDiameter();
+        return 2*Math.PI*radius;
     }
     
-    public double getDiameter()
+    // setter method for the instance variable radius
+    public void setRadius( double newradius )
     {
-        return calculateDiameter();
+        radius = newradius;
     }
     
-    // This private method cannot be accessed outside of the Circle class
-    private double calculateDiameter()
+    // getter method for the instance variable radius
+    public double getRadius()
     {
-        return 2*radius; // pretend this is a very complicated calculation that is used
-                         // more than once in the Circle class.
+        return radius;
     }
+    
 }
