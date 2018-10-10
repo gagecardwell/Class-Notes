@@ -55,7 +55,7 @@ public class Tester
         
         // trim method
         
-        String s5 = "          \tYahoo    !!\t\t\t";
+        String s5 = "          \tYa    hoo    !!\t\t\t";
         
         System.out.println( s5.trim() );
         
@@ -88,7 +88,78 @@ public class Tester
         System.out.println( sc.next() );  //  good d
         System.out.println( sc.next() );  // y.
         
+        // How can we check to make sure the Scanner object has something left to read?
+        sc = new Scanner( "Have a good day." );
         
-                                                
+        while( sc.hasNext() )
+        {
+            System.out.println( sc.next() );
+        }
+        
+
+        System.out.println();
+        sc = new Scanner("The Dukes of Hazzard of Hazzard County");
+        sc.useDelimiter("zz");
+        while( sc.hasNext() )
+        {
+            System.out.println( sc.next() );
+        }
+        
+        
+        System.out.println();
+        sc = new Scanner("The Dukes of Hazzard of Hazzard County");
+        sc.useDelimiter("e|a" );
+        while( sc.hasNext() )
+        {
+            System.out.println( sc.next() );
+        }
+        
+        
+        System.out.println();
+        sc = new Scanner("The Dukes of Hazzard of Hazzard County");
+        sc.useDelimiter("\\s" );
+        while( sc.hasNext() )
+        {
+            System.out.println( sc.next() );
+        }
+        // Other Regex values include:  | means 'or'
+        //                              \\s means 1 whitespace
+        //                              \\s+ means 1 or more whitespaces
+        //                              \\s* means 0 or more whitespaces
+        
+        // Regex examples:
+        System.out.println();
+        String reg = "r\\s+test";  // Any substring that starts with r followed by 1 or more whitespaces,
+                                   // followed by the word test
+        sc = new Scanner("Four tests ago, I was your     testing partner.");
+        sc.useDelimiter( reg );
+        while( sc.hasNext() )
+        {
+            System.out.println( sc.next() );
+        }
+        
+        // The skip method of Scanner
+        System.out.println();
+        sc = new Scanner("Dukes of Hazzard of Hazzard County");
+        int count = 0;
+        
+        System.out.println( sc.next() ); // Dukes
+        sc.skip( "\\s*of" );
+        System.out.println( sc.next() ); // Hazzard
+        sc.skip( "\\s*of" );
+        System.out.println( sc.next() ); // Hazzard
+        System.out.println( sc.next() );  // County
+        
+        // A quirk about delimiters:
+        System.out.println();
+        String sss = "abcxyxyxydef";
+        Scanner scan = new Scanner( sss );
+        scan.useDelimiter( "xy" );
+        while( scan.hasNext() )
+        {
+            System.out.println( scan.next() );
+        }
+        
+        
     }
 }
