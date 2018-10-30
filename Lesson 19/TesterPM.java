@@ -1,4 +1,4 @@
-
+import java.util.Arrays;
 /**
  * Write a description of class TesterPM here.
  * 
@@ -73,6 +73,120 @@ public class TesterPM
         }
         
         
+        // Converting a String into a character array:
+        
+        String s = "What's up?";
+        
+        char yarg[] = s.toCharArray();
+        
+        for( int i = 0; i < yarg.length; i++ )
+        {
+            System.out.println( yarg[i] );
+        }
+        
+        
+        // Converting a character array into a String:
+        
+        String ss = "";
+        for( int i = 0; i < yarg.length; i++ )
+        {
+            ss += yarg[i];
+        }
+        System.out.println( ss );
+        
+        // or use this static method in the String class:
+        
+        String sss = String.copyValueOf( yarg );
+        System.out.println( sss );
+        
+        
+        
+        // Logical vs Physical size of an array (on board)
+        
+        
+        
+        // The Arrays class & static methods
+        
+        // Sorting (arrays)
+        
+        int b[] = {67, 2, 769, -457, -7, 0, 7, 1, 45 };
+        
+        Arrays.sort( b );
+        
+        for( int i = 0; i < b.length; i++ )
+        {
+            System.out.print( b[i] + " " ); 
+        }
+        System.out.println();
+        System.out.println();
+        
+        
+        
+        // Search through an array to find a certain value:
+        
+        // Binary Search (only works on sorted arrays)
+        
+        int index = Arrays.binarySearch( b, 5 );
+        System.out.println( index ); // a negative number
+        System.out.println( Arrays.binarySearch( b, 45 ) ); // gives the index where it's found in a sorted array
+        
+        
+        // Test two arrays (of the same type) for equality
+        
+        int x[] = {1,2,3,4,5};
+        int y[] = {1,2,3,4,5};
+        int z[] = {1,2,88,4,5};
+        
+        System.out.println( Arrays.equals(x, y ) ); // true
+        System.out.println( Arrays.equals(x, z ) ); // false
+        System.out.println( x == y); // false
+        
+        //  Fill an array with a specified value
+        
+        int kp[] = {1,2,3,4,5};
+        
+        Arrays.fill(kp, 99);
+        
+        System.out.println( kp[3] ); // 99
+        
+        
+        // Command Line Arguments
+        
+        if( args.length > 0 )
+        {
+            System.out.println( args[0] ); // look for args[1], args[2], etc
+        }
+        
+        
+        // The enhanced for-loop, aka the for-each loop:
+        
+        int xx[] = {9,8,7,6,5,4,3};
+        
+        int sum = 0;
+        // original for-loop:
+        for( int i = 0; i < xx.length; i++ )
+        {
+            sum += xx[i];
+        }
+
+        System.out.println();
+        
+        // Another version with a for-each loop:
+        int xxx[] = {9,8,7,6,5,4,3};
+        int sum2 = 0;
+        for(int v : xxx)
+        {
+            sum2 += v;
+        }
+
+        // Note:  using a for-each loop gives READ-ONLY access to the array's elements
+        String st[] = {"Moo", "Bark", "Meow" };
+        for( String str : st )
+        {
+            str = "BLAH";  // This code does nothing to the array st
+        }
+        
+        System.out.println( st[1] ); // Bark
         
     }
     
