@@ -208,6 +208,40 @@ public class Tester
         for(int i = 0; i < pk.length; i++ )
             System.out.println( pk[i] );
         
+            
+        // Command Line Arguments
+        // Compile and run a program from the command line:
+        // To compile:  javac NameOfClassWithMainMethod.java
+        // To run:  java NameOfClassWithMainMethod
+        // To add command line arguments:
+        // java NameOfClassWithMainMethod text here separated by spaces
+        //
+        // The above example, args[3] would be "by", args[0] would be "text"
         
+        if( args.length > 0 )
+        {
+            System.out.println( args[2] );
+            
+        }
+            
+        
+        // The enhanced for loop:
+        
+        // a regular for loop that goes through values of an array:
+        
+        int xx[] = {6, 5, 4, 3, 2, 1};
+        // let's print out all the values of xx in order starting at index 0:
+        for( int i = 0; i < xx.length; i++ )
+        {
+            System.out.println( xx[i] );
+        }
+        
+        // now for a 'fancier' for loop: (for each loop)
+        for(int v : xx)
+        {
+            System.out.println( v );
+        }
+        
+            
     }
 }
